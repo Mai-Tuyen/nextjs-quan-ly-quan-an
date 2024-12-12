@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       expires: decodedAccessToken.exp * 1000,
     });
 
-    (await cookieStore).set("tr", refreshToken, {
+    (await cookieStore).set("refreshToken", refreshToken, {
       path: "/",
       httpOnly: true,
       sameSite: "lax",
